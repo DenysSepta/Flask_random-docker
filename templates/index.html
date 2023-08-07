@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+Random Number
+{%block head%}
+<title>{{top_num.random_num}}</title>
+
+{% endblock %}
+
+{%block body%}
+
+<div class="content">
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content" maxlength="20" >
+        <input type="submit" value="Add Number">
+
+    </form>
+    <h1>Numbers</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Added</th>
+            <th>Random Number</th>
+
+        </tr>
+       {%for number in numbers%} 
+        <tr>
+            <td>{{number.content}}</td>
+            <td>{{number.date_created.date()}}</td>
+            <td>{{number.random_num}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+</div>
+
+{% endblock %}
